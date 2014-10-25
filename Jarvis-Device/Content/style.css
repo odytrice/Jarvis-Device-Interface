@@ -1,0 +1,152 @@
+﻿html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 50px;
+    margin-top: 50px;
+    font-family: Calibri,Verdana,Arial;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 50px;
+    background-color: #f5f5f5;
+    padding-top: 15px;
+}
+
+.navbar-brand {
+    padding: 15px 50px;
+}
+
+.navbar-inverse .navbar-brand {
+    color: white;
+}
+
+.fa {
+    margin-right: 5px;
+}
+
+.empty {
+    margin: 30px;
+    text-align: center;
+}
+
+
+.heading {
+    
+}
+
+    .heading hr {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .heading .title, .heading .action-bar {
+        font-size: 20px;
+        margin-top: 15px;
+        margin-bottom: 0px;
+    }
+
+    .heading .action-bar{
+        margin-top: 13px;
+    }
+
+    .heading .action-bar {
+        text-align: right;
+    }
+
+#toast-container {
+    margin-top: 50px;
+}
+
+
+.table.table-wide {
+    width: 100%;
+}
+
+/** Card Styles */
+.card {
+    border-radius: 4px;
+    border: 1px solid #dddddd;
+    padding: 10px 0px;
+    margin: 10px 0px;
+    cursor: default;
+}
+
+    .card:hover {
+        box-shadow: 0 1px 7px 0 rgba(0,0,0,.24);
+    }
+
+    .card header {
+        padding: 5px;
+        vertical-align: middle;
+        border-bottom: 1px solid #ccc;
+    }
+
+    .card button.close, .card a.close {
+        font-size: 14px;
+        padding-top: 3px;
+    }
+
+    .card table {
+        width: 100%;
+        margin: 5px;
+    }
+
+.pane {
+    border-radius: 5px;
+    padding: 70px 30px;
+    text-align: center;
+    cursor: pointer;
+}
+
+    .pane:hover {
+        background-color: #ebf0f5;
+    }
+
+
+.sidebar header {
+    padding: 5px;
+    vertical-align: middle;
+    border-bottom: 1px solid #eee;
+}
+
+.notifications{
+    margin-top:20px;
+}
+.notifications .alert{
+    margin-bottom:10px;
+}
+
+/** Misc **/
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.cursor-default {
+    cursor: default;
+}
+
+.tab-container {
+    padding: 15px 5px;
+}
+
+/** View Animation **/
+.view-frame.ng-enter {
+    -webkit-transition: linear all 0.3s;
+    transition: linear all 0.3s;
+}
+
+.view-frame.ng-enter {
+    opacity: 0;
+}
+
+    .view-frame.ng-enter.ng-enter-active {
+        opacity: 1;
+    }
