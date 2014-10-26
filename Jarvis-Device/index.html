@@ -3,24 +3,76 @@
 <head>
     <link href="Content/bootstrap/bootstrap.css" rel="stylesheet" />
     <link href="Content/bootstrap/css/font-awesome.css" rel="stylesheet" />
+    <link href='http://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
     <link href="Content/style.css" rel="stylesheet" />
     <title></title>
 </head>
 <body ng-app="MainCtrl">
     <div class="container">
         <div class="row">
-            <div class="col-md-6 col-md-offset-3">
-                <h3 class="text-center">Jarvis Home Client</h3>
+            <div class="col-md-12 text-center">
+
+                <p style="font-size:72px;color:#000">
+                    Jarvis Home Controller
+                </p>
+
+                <div class="bg" style="margin-top:100px;"></div>
             </div>
         </div>
         <div class="row">
             <div class="col-md-3">
                 <div class="pane">
+                    <i class="fa fa-microphone" style="font-size:100px;" ng-style="'font-color':bulb.color"></i>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="pane">
+                    <i class="fa fa-camera" style="font-size:100px;" ng-style="'font-color':bulb.color"></i>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="pane">
+                    <i class="fa fa-volume-up" style="font-size:100px;" ng-style="'font-color':bulb.color"></i>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="pane">
                     <i class="fa fa-lightbulb-o" style="font-size:100px;" ng-style="'font-color':bulb.color"></i>
                 </div>
             </div>
+
+
+
+
+            <div class="col-md-3">
+                <div class="pane">
+                    <i class="fa fa-gear" style="font-size:100px;" ng-style="'font-color':bulb.color"></i>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="pane">
+                    <i class="fa fa-power-off" style="font-size:100px;" ng-style="'font-color':bulb.color"></i>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="pane">
+                    <i class="fa fa-key" style="font-size:100px;" ng-style="'font-color':bulb.color"></i>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="pane">
+                    <i class="fa fa-play-circle" style="font-size:100px;" ng-style="'font-color':bulb.color"></i>
+                </div>
+            </div>
+
+
+
+
+
+
+
         </div>
-        
+
     </div>
     <script src="Scripts/controller.js"></script>
     <script src="Scripts/bootstrap/bootstrap.js"></script>

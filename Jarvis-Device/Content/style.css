@@ -7,7 +7,7 @@ body {
     /* Margin bottom by footer height */
     margin-bottom: 50px;
     margin-top: 50px;
-    font-family: Calibri,Verdana,Arial;
+    font-family: 'Poiret One', cursive;
 }
 
 .footer {
@@ -39,7 +39,6 @@ body {
 
 
 .heading {
-    
 }
 
     .heading hr {
@@ -53,7 +52,7 @@ body {
         margin-bottom: 0px;
     }
 
-    .heading .action-bar{
+    .heading .action-bar {
         margin-top: 13px;
     }
 
@@ -104,25 +103,34 @@ body {
     padding: 70px 30px;
     text-align: center;
     cursor: pointer;
+    background-color: #ebf0f5;
 }
 
     .pane:hover {
-        background-color: #ebf0f5;
     }
 
+.bg {
+    /*background:url("Images/electric.png");*/
+    background: url("Images/electric.png");
+    background-position: center;
+    padding: 5px;
+    margin: 0px 0px 30px;
+}
 
 .sidebar header {
     padding: 5px;
     vertical-align: middle;
     border-bottom: 1px solid #eee;
+
 }
 
-.notifications{
-    margin-top:20px;
+.notifications {
+    margin-top: 20px;
 }
-.notifications .alert{
-    margin-bottom:10px;
-}
+
+    .notifications .alert {
+        margin-bottom: 10px;
+    }
 
 /** Misc **/
 .cursor-pointer {
