@@ -3,7 +3,7 @@ app.service('_hub', [
     '$rootScope', '_notify', function ($rootScope, _notify) {
         //Create Representation of the Server's Move Shape
         var conn = $.connection;
-        $.connection.hub.url = 'http://jarvis-hackathon.azurewebsites.net/signalr';
+        $.connection.hub.url = 'http://localhost:13094/signalr';
         var hub = conn.controlHub;
 
         var self = $rootScope.$new();
@@ -28,9 +28,12 @@ app.service('_hub', [
         //Start Connection
         self.start = conn.hub.start();
 
-        ///Bind Server Methods
-        self.hello = function () {
-            hub.server.hello();
+        self.initialize = function (devices) {
+            hub.server.init(devices).done(function () {
+                console.log("Yes!!");
+            }).fail(function (e) {
+                _notify.error(e);
+            });
         };
 
         return self;

@@ -3,6 +3,7 @@
 <head>
     <link href="Content/bootstrap/bootstrap.css" rel="stylesheet" />
     <link href="Content/bootstrap/css/font-awesome.css" rel="stylesheet" />
+    <link href='http://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
     <link href="Content/style.css" rel="stylesheet" />
     <link href="Content/toastr.css" rel="stylesheet" />
     <title></title>
@@ -10,23 +11,73 @@
 <body ng-app="MainApp">
     <div class="container" ng-controller="MainCtrl">
         <div class="row">
-            <div class="col-md-6 col-md-offset-3">
-                <h1 class="text-center">Jarvis Home Automation</h1>
-                <p class="empty"></p>
+            <div class="col-md-12 text-center">
+
+                <p style="font-size:72px;color:#000">
+                    Jarvis Home Controller
+                </p>
+
+                <div class="bg" style="margin-top:100px;"></div>
             </div>
         </div>
         <div class="panel panel-default">
             <div class="panel-body">
-                <div class="row">
-                    <div class="col-md-3">
-                        <div class="pane" ng-click="switchBulb(bulb)">
-                            <i class="fa fa-lightbulb-o" style="font-size:100px;" ng-style="{'color':bulb.color}"></i>
-                        </div>
-                    </div>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="pane">
+                    <i class="fa fa-microphone" style="font-size:100px;" ></i>
                 </div>
             </div>
-        </div>
+            <div class="col-md-3">
+                <div class="pane">
+                    <i class="fa fa-camera" style="font-size:100px;" ></i>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="pane">
+                    <i class="fa fa-volume-up" style="font-size:100px;" ></i>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="pane">
+                    <i class="fa fa-lightbulb-o" style="font-size:100px;" ng-style="{color:bulb.color}"></i>
+                </div>
+            </div>
 
+
+
+
+            <div class="col-md-3">
+                <div class="pane">
+                    <i class="fa fa-gear" style="font-size:100px;" ></i>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="pane">
+                    <i class="fa fa-power-off" style="font-size:100px;" ></i>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="pane">
+                    <i class="fa fa-key" style="font-size:100px;" ></i>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="pane">
+                    <i class="fa fa-play-circle" style="font-size:100px;" ></i>
+                </div>
+            </div>
+
+
+
+
+
+
+
+        </div>
+            </div>
+        </div>
+        
 
     </div>
 
@@ -48,7 +99,7 @@
 
     <!-- SignalR -->
     <script src="Scripts/SignalR/jquery.signalR-2.1.2.js"></script>
-    <script src="http://jarvis-hackathon.azurewebsites.net/signalr/js"></script>
+    <script src="http://localhost:13094/signalr/js"></script>
 
 </body>
 </html>

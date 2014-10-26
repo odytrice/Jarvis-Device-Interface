@@ -14,7 +14,7 @@ app.controller("MainCtrl", function ($scope: ng.IScope, _hub: IHub, _notify: INo
 
     _hub.start.done(function () {
         _notify.success("Connection Established");
-        _hub.hello();
+        _hub.initialize([bulb]);
     });
 
     _hub.start.fail(function (err) {

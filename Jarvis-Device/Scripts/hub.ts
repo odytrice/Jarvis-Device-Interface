@@ -3,7 +3,7 @@
 app.service('_hub', ['$rootScope', '_notify', function ($rootScope: ng.IRootScopeService, _notify: INotify) {
     //Create Representation of the Server's Move Shape
     var conn: any = $.connection;
-    $.connection.hub.url = 'http://jarvis-hackathon.azurewebsites.net/signalr';
+    $.connection.hub.url = 'http://localhost:13094/signalr';
     var hub = conn.controlHub;
 
     var self: IHub = <IHub><any>$rootScope.$new();
@@ -29,10 +29,13 @@ app.service('_hub', ['$rootScope', '_notify', function ($rootScope: ng.IRootScop
     //Start Connection
     self.start = conn.hub.start();
 
-    ///Bind Server Methods
-    self.hello = function () {
-        hub.server.hello();
-    }
+    self.initialize = function (devices) {
+        hub.server.init(devices).done(function () {
+            console.log("Yes!!")
+        }).fail(function (e) {
+            _notify.error(e);
+            });
+    };
 
     return self;
 }]);
@@ -43,6 +46,7 @@ interface IHub {
     * Asynchronously Starts the Connection to the Hub
     */
     start: JQueryPromise<any>;
+    initialize: (devices: Device[]) => void;
 
     /**
     * Says Hello
