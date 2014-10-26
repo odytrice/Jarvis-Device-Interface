@@ -41,6 +41,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -88,6 +92,8 @@
     <Content Include="Content\bootstrap\css\font-awesome.min.css" />
     <Content Include="Content\bootstrap\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\style.css" />
+    <Content Include="Content\toastr.css" />
+    <Content Include="Content\toastr.min.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="index.html" />
     <Content Include="Scripts\angular\angular-animate.js" />
@@ -852,17 +858,38 @@
     <Content Include="Content\bootstrap\fonts\fontawesome-webfont.ttf" />
     <Content Include="Content\bootstrap\fonts\fontawesome-webfont.eot" />
     <Content Include="Content\bootstrap\fonts\FontAwesome.otf" />
+    <Content Include="Content\toastr.scss" />
+    <Content Include="Content\toastr.less" />
     <None Include="Scripts\jquery\jquery-1.9.0.intellisense.js" />
+    <Content Include="Scripts\SignalR\jquery.signalR-2.1.2.js" />
+    <Content Include="Scripts\SignalR\jquery.signalR-2.1.2.min.js" />
     <Content Include="Scripts\jquery\jquery-1.9.0.js" />
     <Content Include="Scripts\jquery\jquery-1.9.0.min.js" />
+    <Content Include="Scripts\toastr\toastr.js" />
+    <Content Include="Scripts\toastr\toastr.min.js" />
     <Content Include="Web.config" />
     <Content Include="Scripts\jquery\jquery-1.9.0.min.map" />
+    <Content Include="Scripts\toastr\toastr.min.js.map" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="Scripts\app.ts" />
     <TypeScriptCompile Include="Scripts\controller.ts" />
+    <TypeScriptCompile Include="Scripts\hub.ts" />
+    <TypeScriptCompile Include="Scripts\services.ts" />
+    <TypeScriptCompile Include="Scripts\typings\angularjs\angular-animate.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\angularjs\angular-cookies.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\angularjs\angular-mocks.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\angularjs\angular-resource.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\angularjs\angular-route.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\angularjs\angular-sanitize.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\angularjs\angular-scenario.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\angularjs\angular.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\jquery\jquery.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\signalr\signalr.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\toastr\toastr.d.ts" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
