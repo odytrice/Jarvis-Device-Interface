@@ -6,6 +6,7 @@
 }
 
 class Device {
+    Id: string;
     Properties: DeviceProperty[];
     IdTags: Tag[]
 }
@@ -30,6 +31,7 @@ class Bulb extends Device {
     constructor() {
         super();
         this.off();
+        this.Id = "1";
         this.IdTags = "bulb,light".split(",")
             .map(t => new Tag(t));
 
@@ -37,6 +39,13 @@ class Bulb extends Device {
         var property = new DeviceProperty();
         property.MutatorTags = "turn,switch,toggle".split(",").map(t=> new Tag(t));
         property.Value = "On";
+
+        this.Properties.push(property);
+
+        var property = new DeviceProperty();
+        property.MutatorTags = "turn,switch,toggle".split(",").map(t=> new Tag(t));
+        property.Value = "Off";
+        this.Properties.push(property);
     }
 
     get color() {
@@ -44,15 +53,15 @@ class Bulb extends Device {
     }
 
     get status() {
-        return this.color == "green";
+        return this.color == "#000";
     }
 
     on() {
-        this._color = "green";
+        this._color = "#000";
     }
 
     off() {
-        this._color = "black"
+        this._color = "#bbb"
     }
 }
 
@@ -62,6 +71,20 @@ interface Command {
     Action: string;
     CommandType: CommandType;
     Parameters: string[]
+}
+
+interface CommandProperty {
+    Name: string;
+    Value: any;
+}
+
+class Response {
+    DeviceID: string;
+    UserID: string;
+    StatusCode: number;
+    Message: string;
+    Properties: CommandProperty[];
+    CommandType: CommandType;
 }
 
 enum CommandType { Query, Act }

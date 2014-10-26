@@ -22,19 +22,23 @@ app.service('_hub', [
                 $rootScope.$apply(function () {
                     console.log("Hello World!!");
                 });
+            },
+            OnCommand: function (command) {
+                $rootScope.$apply(function () {
+                    self.$emit("new-command", command);
+                });
             }
         });
 
         //Start Connection
-        self.start = conn.hub.start();
-
-        self.initialize = function (devices) {
-            hub.server.init(devices).done(function () {
-                console.log("Yes!!");
-            }).fail(function (e) {
-                _notify.error(e);
-            });
-        };
+        self.start = conn.hub.start().done(function () {
+            self.initialize = function (devices) {
+                hub.server.init(devices);
+            };
+            self.respond = function (resp) {
+                hub.server.OnCommandCompleted(resp);
+            };
+        });
 
         return self;
     }]);

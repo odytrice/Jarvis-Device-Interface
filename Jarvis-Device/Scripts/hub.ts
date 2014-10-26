@@ -23,19 +23,25 @@ app.service('_hub', ['$rootScope', '_notify', function ($rootScope: ng.IRootScop
             $rootScope.$apply(function () {
                 console.log("Hello World!!");
             });
+        },
+        OnCommand: function (command:Command) {
+            $rootScope.$apply(function () {
+                self.$emit("new-command", command);
+            });
         }
     });
 
     //Start Connection
-    self.start = conn.hub.start();
+    self.start = conn.hub.start().done(function () {
 
-    self.initialize = function (devices) {
-        hub.server.init(devices).done(function () {
-            console.log("Yes!!")
-        }).fail(function (e) {
-            _notify.error(e);
-            });
-    };
+        self.initialize = function (devices) {
+            hub.server.init(devices);
+
+        };
+        self.respond = function (resp) {
+            hub.server.OnCommandCompleted(resp);
+        };
+    });
 
     return self;
 }]);
@@ -52,6 +58,8 @@ interface IHub {
     * Says Hello
     */
     hello: () => void;
+
+    respond: (response: Response) => void;
 
     $emit(name: string, ...args: any[]): ng.IAngularEvent;
     $on(name: string, listener: (event: ng.IAngularEvent, args: any) => any): Function;
